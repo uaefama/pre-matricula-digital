@@ -43,6 +43,7 @@
                   icon="mdi-close"
                   color="primary"
                   class="flex-row justify-content-center"
+                  aria-label="Fechar"
                   @click="close"
                 />
               </div>
