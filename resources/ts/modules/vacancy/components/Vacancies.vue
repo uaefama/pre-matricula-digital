@@ -101,13 +101,13 @@
         <x-card bordered>
           <x-card-section class="p-3">
             <div class="d-flex justify-content-between">
-              <h3
+              <h2
                 v-tooltip.bottom-start="process.name"
                 data-test="vacancy-card-title"
                 class="font-hind-18-primary text-primary m-0 text-truncate"
               >
                 {{ process.name }}
-              </h3>
+              </h2>
               <div
                 v-if="process.excededVacancies"
                 v-tooltip.bottom-start="
@@ -659,7 +659,7 @@ onMounted(() => getData());
   font-style: normal;
   line-height: normal;
   letter-spacing: normal;
-  color: #ababab;
+  color: #545454; // WCAG AAA (7:1) - era #ababab
   margin-right: 1em;
 }
 

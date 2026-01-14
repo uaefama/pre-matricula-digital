@@ -5,12 +5,13 @@
     </div>
     <div v-if="notice" class="row">
       <div class="col-12 col-lg-10 offset-lg-1">
-        <h2 class="title-find-school">Avisos</h2>
+        <h1 class="title-find-school">Avisos</h1>
         <div class="mt-4">
-          <p
+          <div
             data-test="notice-section"
+            class="text-break"
             v-html="notice.text || 'Nenhum aviso cadastrado'"
-          ></p>
+          ></div>
         </div>
       </div>
     </div>

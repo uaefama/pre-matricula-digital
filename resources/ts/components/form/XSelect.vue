@@ -2,6 +2,7 @@
   <div class="position-relative">
     <v-select
       v-bind="{ ...$attrs, modelValue: model }"
+      :input-id="($attrs.name as string) || ($attrs.id as string)"
       :options="fetchOptions"
       :clearable="clearable"
       :searchable="searchable"

@@ -1,10 +1,19 @@
 <template>
-  <input v-mask="mask" v-bind="$attrs" type="tel" :autocomplete="unique" />
+  <input
+    :id="inputId"
+    v-mask="mask"
+    v-bind="$attrs"
+    type="tel"
+    :autocomplete="unique"
+  />
 </template>
 
 <script lang="ts">
-import { PropType, defineComponent, ref } from 'vue';
+import { PropType, defineComponent, ref, computed, useAttrs } from 'vue';
 import { mask } from 'vue-the-mask';
+
+let birthCertificateInputCounter = 0;
+
 export default defineComponent({
   directives: {
     mask,
@@ -20,10 +29,15 @@ export default defineComponent({
     },
   },
   setup() {
+    const attrs = useAttrs();
     const mask = ref('################################');
+    const generatedId = `input-birth-certificate-${++birthCertificateInputCounter}`;
+
+    const inputId = computed(() => (attrs.id as string) || generatedId);
 
     return {
       mask,
+      inputId,
     };
   },
 });

@@ -8,7 +8,7 @@
         </transition>
       </router-view>
     </main>
-    <footer id="footer" class="pt-5 pb-5 text-center text-muted small">
+    <footer id="footer" class="pt-5 pb-5 text-center small">
       © {{ year }} UAEFAMA - União das Escolas Famílias Agrícolas do Maranhão
     </footer>
   </div>

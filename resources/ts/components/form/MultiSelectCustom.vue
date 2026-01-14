@@ -1,6 +1,7 @@
 <template>
   <div>
     <Multiselect
+      :id="$attrs.name as string"
       v-model="model"
       mode="multiple"
       :close-on-select="false"
@@ -117,10 +118,10 @@ export default defineComponent({
 }
 .multiselect-placeholder {
   font-family: inherit;
-  color: #787878 !important;
+  color: #545454 !important; /* WCAG AAA (7:1) - era #787878 */
 }
 .multiselect-option.is-selected {
-  background: #0072ff !important;
+  background: #003d82 !important; /* WCAG AAA - era #0072ff */
 }
 .multiselect-search {
   border-radius: 8px !important;

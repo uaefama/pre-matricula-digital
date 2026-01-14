@@ -9,8 +9,8 @@
           @click="onBackdropClick"
         ></div>
       </transition>
-      <transition name="x-transition--fade" :appear="true">
-        <div v-if="showing" :class="classes" tabindex="-1">
+      <transition name="x-transition--fade" :appear="true" @after-enter="onAfterEnter">
+        <div v-if="showing" ref="modalInner" :class="classes" tabindex="-1" role="dialog" aria-modal="true">
           <slot name="default"></slot>
         </div>
       </transition>
@@ -75,6 +75,8 @@ const props = withDefaults(
 );
 
 const showing = ref(false);
+const modalInner = ref<HTMLElement | null>(null);
+const previousActiveElement = ref<Element | null>(null);
 
 const classes = computed(() => ({
   'x-modal__inner': true,
@@ -103,13 +105,61 @@ const addEscapeKey = (e: KeyboardEvent) => {
   }
 };
 
+// Focus trap: mantém o foco dentro do modal
+const handleTabKey = (e: KeyboardEvent) => {
+  if (e.key !== 'Tab' || !modalInner.value) return;
+
+  const focusableElements = modalInner.value.querySelectorAll<HTMLElement>(
+    'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+  );
+
+  if (focusableElements.length === 0) return;
+
+  const firstElement = focusableElements[0];
+  const lastElement = focusableElements[focusableElements.length - 1];
+
+  if (e.shiftKey) {
+    // Shift+Tab: se está no primeiro elemento, vai para o último
+    if (document.activeElement === firstElement) {
+      e.preventDefault();
+      lastElement.focus();
+    }
+  } else {
+    // Tab: se está no último elemento, vai para o primeiro
+    if (document.activeElement === lastElement) {
+      e.preventDefault();
+      firstElement.focus();
+    }
+  }
+};
+
+// Callback após transição de entrada - foca no primeiro elemento focável
+const onAfterEnter = () => {
+  if (!modalInner.value) return;
+
+  const focusableElements = modalInner.value.querySelectorAll<HTMLElement>(
+    'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+  );
+
+  if (focusableElements.length > 0) {
+    focusableElements[0].focus();
+  } else {
+    // Se não há elementos focáveis, foca no próprio modal
+    modalInner.value.focus();
+  }
+};
+
 const handleShow = () => {
+  // Salva o elemento que estava focado antes de abrir o modal
+  previousActiveElement.value = document.activeElement;
+
   if (openedModals < 1 && useBackdrop.value === true) {
     document.body.classList.add('x-body--modal');
     document.getElementById('pmd_navbar')?.classList.add('x-nav--modal');
   }
   openedModals += 1;
   document.addEventListener('keydown', addEscapeKey, true);
+  document.addEventListener('keydown', handleTabKey, true);
 };
 
 const handleHide = () => {
@@ -119,6 +169,12 @@ const handleHide = () => {
   }
   openedModals = openedModals - 1;
   document.removeEventListener('keydown', addEscapeKey, true);
+  document.removeEventListener('keydown', handleTabKey, true);
+
+  // Restaura o foco para o elemento que estava focado antes de abrir o modal
+  if (previousActiveElement.value && previousActiveElement.value instanceof HTMLElement) {
+    previousActiveElement.value.focus();
+  }
 };
 
 const processHide = () => {

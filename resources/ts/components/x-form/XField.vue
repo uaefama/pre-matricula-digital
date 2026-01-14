@@ -30,6 +30,7 @@
 
     <template v-if="type === 'TEXT' && !Boolean(mask)">
       <input
+        :id="name"
         v-bind="field"
         type="text"
         class="form-control"
@@ -46,6 +47,7 @@
 
     <template v-if="type === 'TEXT' && Boolean(mask)">
       <input
+        :id="name"
         v-mask="mask"
         v-bind="field"
         type="text"
@@ -59,6 +61,7 @@
 
     <template v-if="type === 'NUMBER'">
       <input
+        :id="name"
         v-bind="field"
         type="number"
         class="form-control"
@@ -71,6 +74,7 @@
 
     <template v-if="type === 'LONG_TEXT'">
       <textarea
+        :id="name"
         v-bind="field"
         v-model="modelTextArea"
         class="form-control"
@@ -92,6 +96,7 @@
 
     <template v-if="type === 'EMAIL'">
       <input
+        :id="name"
         v-bind="field"
         type="email"
         class="form-control"
@@ -105,6 +110,7 @@
 
     <template v-if="type === 'DATE'">
       <input-date
+        :id="name"
         :unique="unique"
         :placeholder="placeholder"
         v-bind="field"
@@ -114,6 +120,7 @@
 
     <template v-if="type === 'TIME'">
       <input-hour
+        :id="name"
         v-model="model"
         :unique="unique"
         :placeholder="placeholder"
@@ -124,6 +131,7 @@
 
     <template v-if="type === 'CPF'">
       <input-cpf
+        :id="name"
         :unique="unique"
         :placeholder="placeholder"
         v-bind="field"
@@ -145,6 +153,7 @@
 
     <template v-if="type === 'BIRTH_CERTIFICATE'">
       <input-birth-certificate
+        :id="name"
         :unique="unique"
         v-bind="field"
         class="form-control"
@@ -155,6 +164,7 @@
 
     <template v-if="type === 'PHONE'">
       <input-phone
+        :id="name"
         v-model:data="model"
         :unique="unique"
         v-bind="field"

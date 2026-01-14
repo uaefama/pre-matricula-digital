@@ -10,9 +10,9 @@
         <div class="col-12">
           <div class="row">
             <div class="col-md-8 mt-5 offset-md-2">
-              <h2 class="font-muli-20-primary mb-4">
-                Identifique o(a) aluno(a) para encontrar o(s) protocolo(s):
-              </h2>
+              <h1 class="font-muli-20-primary mb-4">
+                Identifique o(a) aluno(a) para encontrar o(s) protocolo(s)
+              </h1>
               <p class="text-justify font-hind">
                 Preencha os dados abaixo para identificar se o(a)
                 <strong>aluno(a)</strong> já possui alguma inscrição de

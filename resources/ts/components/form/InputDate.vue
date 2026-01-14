@@ -5,12 +5,13 @@
         ref="input"
         type="button"
         class="btn btn-primary no-focus"
-        tabindex="-1"
+        aria-label="Abrir calendário"
       >
-        <x-icon name="mdi-calendar-month" />
+        <x-icon name="mdi-calendar-month" aria-hidden="true" />
       </button>
     </div>
     <input
+      :id="$attrs.id as string"
       v-model="maskedModel"
       v-mask="mask"
       type="text"

@@ -7,9 +7,9 @@
     <x-card-section class="pb-0">
       <div class="d-flex justify-content-between">
         <div class="pl-3 pl-lg-4">
-          <h5 class="text-h5">
+          <h4 class="text-h5">
             {{ stageTypeText(stage.type) }}
-          </h5>
+          </h4>
         </div>
         <div class="pr-3 pr-lg-4">
           <small
@@ -25,18 +25,18 @@
     <x-card-section class="pb-0">
       <div class="d-flex flex-column flex-lg-row">
         <div class="pb-2 pb-lg-0 pl-4 pl-lg-4">
-          <span class="text-gray-600 mr-4"> Início </span>
+          <span class="text-gray-900 mr-4"> Início </span>
         </div>
         <div class="d-flex justify-content-between flex-grow-1 pl-4 pl-lg-0">
           <div class="flex-lg-grow-1 text-lg-center text-size-base">
             <i class="fa fa-calendar text-primary mr-2"></i>
-            <span class="text-gray-600">{{
+            <span class="text-gray-900">{{
               $filters.formatDate(stage.startAt)
             }}</span>
           </div>
           <div class="pr-4 text-size-base">
             <i class="fa fa-clock-o text-primary mr-2"></i>
-            <span class="text-gray-600">{{
+            <span class="text-gray-900">{{
               $filters.formatTime(stage.startAt)
             }}</span>
           </div>
@@ -49,18 +49,18 @@
       </div>
       <div class="d-flex flex-column flex-lg-row">
         <div class="pb-2 pb-lg-0 pl-4">
-          <span class="text-gray-600"> Término </span>
+          <span class="text-gray-900"> Término </span>
         </div>
         <div class="d-flex justify-content-between flex-grow-1 pl-4 pl-lg-0">
           <div class="flex-lg-grow-1 text-lg-center text-size-base">
             <i class="fa fa-calendar text-primary mr-2"></i>
-            <span class="text-gray-600">{{
+            <span class="text-gray-900">{{
               $filters.formatDate(stage.endAt)
             }}</span>
           </div>
           <div class="pr-4 text-size-base">
             <i class="fa fa-clock-o text-primary mr-2"></i>
-            <span class="text-gray-600">{{
+            <span class="text-gray-900">{{
               $filters.formatTime(stage.endAt)
             }}</span>
           </div>

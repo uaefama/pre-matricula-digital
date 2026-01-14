@@ -5,7 +5,7 @@
     </div>
     <div class="row">
       <div class="col-12">
-        <h2 class="title-find-school">Consultar escola</h2>
+        <h1 class="title-find-school">Consultar escola</h1>
         <x-card flat class="bg-primary mt-4">
           <x-card-section>
             <form @submit.prevent="searchAddress">
@@ -39,8 +39,8 @@
                       :loading="loadingSearchAddress"
                       type="submit"
                       icon="fa-search"
-                      class="w-100 bg-primary-light text-primary flex-row"
-                      style="height: 45px"
+                      class="w-100 bg-primary-light flex-row"
+                      style="height: 45px; color: #003d82"
                       loading-normal
                     />
                   </div>

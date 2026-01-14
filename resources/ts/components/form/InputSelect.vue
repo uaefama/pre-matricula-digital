@@ -1,5 +1,5 @@
 <template>
-  <select v-model="model" v-bind="$attrs">
+  <select :id="selectId" v-model="model" v-bind="$attrs">
     <option v-for="option in options" :key="option.id" :value="option.id">
       {{ option.label }}
     </option>
@@ -7,8 +7,11 @@
 </template>
 
 <script lang="ts">
-import { PropType, defineComponent } from 'vue';
+import { PropType, defineComponent, computed, useAttrs } from 'vue';
 import { useVModel } from '@vueuse/core';
+
+let inputSelectCounter = 0;
+
 export default defineComponent({
   props: {
     modelValue: {
@@ -22,10 +25,14 @@ export default defineComponent({
   },
   emits: ['input'],
   setup(props) {
+    const attrs = useAttrs();
     const model = useVModel(props, 'modelValue');
+    const generatedId = `input-select-${++inputSelectCounter}`;
+    const selectId = computed(() => (attrs.id as string) || generatedId);
 
     return {
       model,
+      selectId,
     };
   },
 });

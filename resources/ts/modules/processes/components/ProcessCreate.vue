@@ -1,6 +1,6 @@
 <template>
   <main class="container" style="max-width: 740px">
-    <h2 class="font-muli-20-primary">Crie o processo de pré-matrícula</h2>
+    <h1 class="font-muli-20-primary">Crie o processo de pré-matrícula</h1>
     <p>
       Crie o processo de pré-matrícula que deseja liberar para o seu município.
       Escolha um nome, para qual ano as pré-matrículas serão válidas, selecione

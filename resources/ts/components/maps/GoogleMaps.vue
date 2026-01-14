@@ -1,5 +1,8 @@
 <template>
-  <div class="google-map">
+  <div class="google-map" role="application" aria-label="Mapa interativo do Google Maps">
+    <span class="visually-hidden">
+      Mapa interativo fornecido pelo Google Maps. Use as setas do teclado para navegar pelo mapa.
+    </span>
     <div ref="map" class="google-map-container"></div>
     <template v-if="Boolean(googleInstance) && Boolean(mapInstance)">
       <slot name="default" :map="mapInstance"></slot>
@@ -95,5 +98,18 @@ onMounted(() => {
 .google-map-container {
   min-height: 100%;
   width: 100%;
+}
+
+/* Classe para ocultar visualmente mas manter acessível para leitores de tela */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
 </style>

@@ -140,9 +140,9 @@
     </div>
     <div v-if="priorityFields" class="row">
       <div class="col-12">
-        <h1 class="mt-5 text-center" style="font-size: 26px">
+        <h2 class="mt-5 text-center" style="font-size: 26px">
           Critérios de priorização da lista de espera
-        </h1>
+        </h2>
       </div>
       <div class="col-2"></div>
       <div class="col-8">

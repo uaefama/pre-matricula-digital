@@ -4,10 +4,10 @@
       <button
         type="button"
         class="btn btn-primary"
-        tabindex="-1"
+        aria-label="Abrir seletor de hora"
         @click="callCalendarHour"
       >
-        <x-icon name="mdi-clock" />
+        <x-icon name="mdi-clock" aria-hidden="true" />
       </button>
     </div>
     <flat-pickr

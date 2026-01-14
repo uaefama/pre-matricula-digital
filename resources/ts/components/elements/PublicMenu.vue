@@ -30,19 +30,19 @@ const items = ref(
     {
       id: 1,
       name: 'Página Inicial',
-      class: 'nav-link text-primary',
+      class: 'nav-link text-primary-dark',
       to: '/',
     },
     {
       id: 2,
       name: 'Avisos',
-      class: 'nav-link text-primary',
+      class: 'nav-link text-primary-dark',
       to: '/avisos',
     },
     {
       id: 3,
       name: 'Consultar Escola',
-      class: 'nav-link text-primary',
+      class: 'nav-link text-primary-dark',
       to: '/consultar-escola',
     },
     {

@@ -17,7 +17,7 @@
       <div class="col-12 col-md-10 offset-md-1">
         <x-card bordered>
           <x-card-section class="pl-4 pr-4 pt-3 p-0">
-            <h5 class="text-h5 text-primary">Avisos</h5>
+            <h2 class="text-h5 text-primary-dark">Avisos</h2>
           </x-card-section>
           <x-card-section class="pl-4 pr-4 pb-3 p-0">
             <div class="row">
@@ -30,7 +30,7 @@
               <div
                 class="col-11 col-lg-2 font-hind offset-lg-10 pr-0 pr-md-4 text-right"
               >
-                <router-link to="/avisos">Leia mais</router-link>
+                <router-link to="/avisos" class="text-primary-dark text-underline">Leia mais</router-link>
               </div>
             </div>
           </x-card-section>
@@ -52,19 +52,19 @@
         >
           <div class="row">
             <div class="col-12 mt-3 mt-sm-2 d-flex">
-              <h4 class="m-0">
+              <h3 class="m-0">
                 {{ process.name }} ({{ process.schoolYear.year }})
-              </h4>
+              </h3>
               <router-link
                 v-if="process.showWaitingList"
                 :to="`/lista-de-espera/${process.id}`"
-                class="ml-auto p-2 bg-primary rounded text-white"
+                class="ml-auto p-2 bg-primary-dark rounded text-white"
               >
                 Consultar lista de espera
               </router-link>
               <span
                 v-else
-                class="ml-auto p-2 bg-gray-300 text-gray-700 rounded"
+                class="ml-auto p-2 bg-gray-300 text-gray-900 rounded"
               >
                 Lista de espera não disponível
               </span>

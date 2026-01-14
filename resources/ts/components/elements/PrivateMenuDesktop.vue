@@ -134,6 +134,6 @@ const items = computed(() => {
   font-family: Muli, sans-serif;
   font-weight: bold;
   font-size: 18px;
-  color: rgba(0, 0, 0, 0.3);
+  color: #495057; // WCAG AAA (7:1) - era rgba(0, 0, 0, 0.3)
 }
 </style>

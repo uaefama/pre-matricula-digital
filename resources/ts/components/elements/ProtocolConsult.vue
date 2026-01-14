@@ -4,14 +4,14 @@
       <div class="col-12">
         <x-card bordered>
           <x-card-section class="pl-4 pr-4 pt-3 p-0">
-            <h5 class="text-h5 text-primary">
+            <h2 class="text-h5 text-primary-dark">
               {{ title }}
-            </h5>
+            </h2>
           </x-card-section>
           <x-card-section class="pl-4 pr-4 pb-3 p-0">
-            <p class="mb-0 text-black-80 text-size-10 font-hind text-uppercase">
+            <label for="protocol-input" class="mb-0 text-black-80 text-size-10 font-hind text-uppercase">
               Insira o número do protocolo
-            </p>
+            </label>
 
             <div class="row">
               <div class="col-12 col-md-8 mb-md-0">
@@ -23,13 +23,15 @@
                   name="protocol"
                 >
                   <input
+                    id="protocol-input"
                     v-bind="field"
                     class="form-control pl-4 mr-3"
                     :class="{ 'is-invalid': !!slot.errors['protocol'] }"
+                    aria-describedby="protocol-error"
                   />
-                  <span class="protocol-hashtag">#</span>
+                  <span class="protocol-hashtag" aria-hidden="true">#</span>
 
-                  <ErrorMessage name="protocol" class="validator-rule-error" />
+                  <ErrorMessage id="protocol-error" name="protocol" class="validator-rule-error" />
                 </Field>
               </div>
               <div class="col-12 col-md-4 pt-3 pt-md-0">
@@ -44,10 +46,10 @@
                 />
               </div>
             </div>
-            <p class="text-muted pt-3 pt-md-0">
+            <p class="pt-3 pt-md-0">
               <router-link
                 to="/onde-encontro-o-protocolo"
-                class="text-black-80 font-hind text-underline mb-0"
+                class="text-primary-dark font-hind text-underline mb-0"
               >
                 Onde encontro o protocolo?
               </router-link>

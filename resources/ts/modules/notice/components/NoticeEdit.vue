@@ -4,7 +4,7 @@
     <div v-if="!loadingData && notice">
       <div class="row mt-5">
         <div class="col-12 col-lg-10 offset-lg-1">
-          <h2 class="title-find-school">Avisos</h2>
+          <h1 class="title-find-school">Avisos</h1>
           <div class="mt-4">
             <p class="font-hind text-justify">
               Ao inserir conteúdo no editor de texto abaixo a mensagem será

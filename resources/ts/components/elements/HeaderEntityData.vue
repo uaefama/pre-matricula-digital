@@ -5,9 +5,9 @@
         <div style="font-size: 24px">
           {{ getSlogan }}
         </div>
-        <div style="font-size: 34px">
+        <h1 class="m-0" style="font-size: 34px; font-weight: inherit">
           {{ getEntityData.city }}
-        </div>
+        </h1>
       </div>
       <div class="ml-auto col-5">
         <img :src="getLogo" :alt="getEntityData.city" class="img-fluid" />

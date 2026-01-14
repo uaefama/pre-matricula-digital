@@ -138,7 +138,7 @@ const handleClose = () => {
   border: none;
   font-size: 1em;
   margin-top: calc(0.5em + -2.8rem);
-  color: #787878;
-  opacity: 0.8;
+  color: #545454; /* WCAG AAA (7:1) - era #787878 */
+  opacity: 1; /* Removido opacity para manter contraste */
 }
 </style>

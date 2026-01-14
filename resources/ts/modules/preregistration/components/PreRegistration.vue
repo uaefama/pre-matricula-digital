@@ -1,5 +1,6 @@
 <template>
   <div class="mt-5">
+    <h1 class="sr-only">Processo de Inscrição</h1>
     <skeleton-form-preregistration v-if="step === 'LOADING'" />
     <x-form
       v-if="step !== 'LOADING' && step !== 'PROTOCOL'"

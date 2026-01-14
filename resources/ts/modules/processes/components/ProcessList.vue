@@ -65,16 +65,17 @@
         class="col-12 col-md-6 mt-4"
       >
         <div class="d-flex justify-content-between">
-          <router-link
-            v-tooltip.bottom-start="
-              `${process.name} (${process.schoolYear.year})`
-            "
-            :to="{ name: 'process.show', params: { id: process.id } }"
-            class="text-truncate h4 text-blue-dark"
-            :class="{ 'text-muted': !process.active }"
-          >
-            {{ process.name }} ({{ process.schoolYear.year }})
-          </router-link>
+          <h2 class="text-truncate h4 text-blue-dark m-0" :class="{ 'text-muted': !process.active }">
+            <router-link
+              v-tooltip.bottom-start="
+                `${process.name} (${process.schoolYear.year})`
+              "
+              :to="{ name: 'process.show', params: { id: process.id } }"
+              class="text-blue-dark text-decoration-none"
+            >
+              {{ process.name }} ({{ process.schoolYear.year }})
+            </router-link>
+          </h2>
           <div v-if="!process.active" class="d-flex align-items-start mt-n1">
             <span class="badge badge-gray"> Inativo </span>
           </div>
@@ -89,7 +90,7 @@
           class="mb-3"
         >
           <x-card-section class="pb-0">
-            <h5 class="text-h5">
+            <h3 class="text-h5">
               {{ stageTypeText(stage.type) }}
               <small
                 :class="stageStatusBadge(stage.status)"
@@ -97,7 +98,7 @@
               >
                 {{ stageStatusText(stage.status) }}
               </small>
-            </h5>
+            </h3>
           </x-card-section>
           <x-card-section class="pt-0">
             <div class="mt-2 d-flex align-items-center text-size-15">

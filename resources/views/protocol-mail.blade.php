@@ -64,11 +64,11 @@
                     <div style="padding: 30px;">
                       <table style="width: 100%" role="presentation">
                         <tr>
-                          <td style="font-size: 20px; color: gray; padding: 0 0 30px 0; vertical-align: middle">
+                          <td style="font-size: 20px; color: #495057; padding: 0 0 30px 0; vertical-align: middle">
                             Sua inscrição foi realizada com sucesso.
                           </td>
                           <td rowspan="7" valign="top">
-                            <img style="float: right" src="{{ config('prematricula.logo') }}" width="100" alt="Logo">
+                            <img style="float: right" src="{{ config('prematricula.logo') }}" width="100" alt="Logo da Secretaria de Educação de {{ config('prematricula.city') }}">
                           </td>
                         </tr>
                       </table>
@@ -158,7 +158,7 @@
                           </td>
                         </tr>
                         <tr>
-                          <td style="color: #6c757d;font-size: 80%;">
+                          <td style="color: #495057; font-size: 80%;">
                             Código de autenticidade: {{ $preregistration->code }}
                           </td>
                         </tr>
@@ -179,7 +179,7 @@
         <tr>
             <td>
                 <div style="padding: 30px;">
-                    <p style="font-size: 15px; color: gray; text-align: center; vertical-align: middle;">
+                    <p style="font-size: 15px; color: #495057; text-align: center; vertical-align: middle;">
                         Este e-mail não está habilitado para respostas. Para mais informações favor contatar a Secretaria
                         escolar do Município ou a Unidade escolar selecionada na inscrição.
                     </p>

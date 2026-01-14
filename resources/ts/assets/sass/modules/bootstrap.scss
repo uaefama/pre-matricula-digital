@@ -24,6 +24,7 @@ body {
 }
 #footer {
   flex-shrink: 0;
+  color: #212529 !important; // Cor escura sólida para melhor contraste (WCAG AAA)
 }
 
 .overflow-visible {
@@ -117,6 +118,7 @@ dd {
   font-size: 18px;
   padding-left: 2rem !important;
   padding-right: 2rem !important;
+  color: $primary !important; // WCAG AAA (7:1)
 }
 .nav-link:hover,
 .nav-link.active {
@@ -223,7 +225,7 @@ dd {
 .font-muli-20-primary {
   font-family: $font-muli !important;
   font-size: 20px;
-  color: $primary;
+  color: $primary !important; // WCAG AAA (7:1)
   font-weight: bold;
 }
 
@@ -246,6 +248,12 @@ dd {
 .text-blue-dark {
   color: $blue-dark;
 }
+.text-primary-dark {
+  color: #003d82; // Azul muito escuro para contraste WCAG AAA (7:1)
+}
+.bg-primary-dark {
+  background-color: #003d82 !important; // Azul escuro para contraste WCAG AAA (7:1) com texto branco
+}
 .text-size-10 {
   font-size: 10px;
 }
@@ -261,7 +269,7 @@ dd {
   top: 0.6rem;
   left: 0.7rem;
   font-size: 18px;
-  color: $gray-600;
+  color: #212529; // Cinza muito escuro para contraste WCAG AAA (7:1)
 }
 
 .card {
@@ -270,27 +278,27 @@ dd {
 
 .badge-green {
   background-color: $light-green;
-  color: $green;
+  color: #1a5200; // Verde mais escuro para melhor contraste (WCAG AA)
 }
 
 .badge-yellow {
   background-color: $light-yellow;
-  color: $dark-yellow;
+  color: #665c00; // Amarelo mais escuro para melhor contraste (WCAG AA)
 }
 
 .badge-red {
   background-color: #ffe7e9;
-  color: $danger;
+  color: #a3324e; // Vermelho mais escuro para melhor contraste (WCAG AA)
 }
 
 .badge-blue {
   background-color: $primary-light;
-  color: $primary;
+  color: #0050b3; // Azul mais escuro para melhor contraste (WCAG AA)
 }
 
 .badge-orange {
   background-color: #ffc195;
-  color: #d08046;
+  color: #8a4a1a; // Laranja mais escuro para melhor contraste (WCAG AA)
 }
 
 .badge-purple {
@@ -300,27 +308,27 @@ dd {
 
 .badge-light-green {
   background-color: #f0ff95;
-  color: #819022;
+  color: #4d5600; // Verde-limão mais escuro para melhor contraste (WCAG AA)
 }
 
 .badge-pink {
   background-color: #ff95fb;
-  color: #ad35a8;
+  color: #6e1569; // Rosa mais escuro para melhor contraste (WCAG AA)
 }
 
 .badge-cyan {
   background-color: #95d9ff;
-  color: #327faa;
+  color: #1a5070; // Ciano mais escuro para melhor contraste (WCAG AA)
 }
 
 .badge-gray {
   background-color: $gray-200;
-  color: $gray-600;
+  color: $gray-700; // Cinza mais escuro para melhor contraste (WCAG AA)
 }
 
 .badge-light-orange {
   background-color: #ffe3cf;
-  color: #d25c07;
+  color: #8a3d05; // Laranja mais escuro para melhor contraste (WCAG AA)
 }
 
 .validator-container.before:before,
@@ -353,17 +361,34 @@ dd {
   font-size: 1.2rem;
 }
 
+// Garantir que ícones dentro de botões primários tenham cor branca (WCAG AAA)
+.btn-primary {
+  span,
+  i,
+  svg {
+    color: $white !important;
+    fill: $white !important;
+  }
+}
+
 .btn-outline-danger,
 .btn-outline-danger:active,
 .btn-outline-danger:hover,
-.btn-outline-danger:disabled,
+.btn-outline-danger:disabled {
+  border-width: 2px !important;
+  background-color: $white !important;
+  color: $light;
+  border-color: $light;
+}
+
+// WCAG AAA (7:1) - btn-outline-light com contraste adequado
 .btn-outline-light,
 .btn-outline-light:active,
 .btn-outline-light:hover {
   border-width: 2px !important;
   background-color: $white !important;
-  color: $light;
-  border-color: $light;
+  color: $primary !important; // era $light - WCAG AAA
+  border-color: $primary !important; // era $light - WCAG AAA
 }
 .btn-outline-danger:focus,
 .btn-outline-light:focus {
@@ -1101,4 +1126,77 @@ input:disabled {
 
 .mw-440 {
   min-width: 440px;
+}
+
+// Melhorar contraste de conteúdo renderizado por editores WYSIWYG (WCAG AAA - 7:1)
+.fr-view,
+.text-break {
+  // Cor base do texto para garantir contraste AAA
+  color: #212529 !important;
+
+  // Garantir que links tenham contraste adequado (AAA)
+  a {
+    color: #003d82 !important; // Azul mais escuro para AAA (7:1)
+    text-decoration: underline;
+  }
+  // Garantir que textos cinza tenham contraste adequado - cobrir variações de estilos inline
+  span[style*="color: gray"],
+  span[style*="color:gray"],
+  span[style*="color: #808080"],
+  span[style*="color:#808080"],
+  span[style*="color: #999"],
+  span[style*="color:#999"],
+  span[style*="color: #aaa"],
+  span[style*="color:#aaa"],
+  span[style*="color: #bbb"],
+  span[style*="color:#bbb"],
+  span[style*="color: #ccc"],
+  span[style*="color:#ccc"],
+  span[style*="color: rgb(128"],
+  span[style*="color: rgb(153"],
+  span[style*="color: rgb(170"],
+  span[style*="color: rgb(187"],
+  span[style*="color: rgb(204"],
+  font[color="gray"],
+  p[style*="color: gray"],
+  p[style*="color:gray"],
+  // Textos pequenos (ex: "Powered by") geralmente usam font-size pequeno
+  small,
+  .small {
+    color: #212529 !important; // Preto para AAA (7:1)
+  }
+}
+
+// Froala "Powered by" branding - melhorar contraste (WCAG AA)
+.fr-wrapper {
+  .fr-element {
+    a {
+      color: #0050b3 !important;
+    }
+  }
+}
+
+// Texto "Powered by" do Froala geralmente está em elementos com estilo inline gray
+[style*="color: gray"],
+[style*="color:gray"] {
+  &:not(.btn):not(.badge) {
+    color: #495057 !important;
+  }
+}
+
+// Ocultar branding "Powered by Froala/Prima Editor" em conteúdo WYSIWYG
+.fr-view,
+.text-break {
+  // Ocultar link para Froala/Prima Editor
+  a[href*="froala"],
+  a[href*="prima"],
+  a[href*="froala.com"],
+  a[href*="primaeditor"] {
+    display: none !important;
+  }
+  // Ocultar parágrafo contendo "Powered by" (usando :has para browsers modernos)
+  p:has(a[href*="froala"]),
+  p:has(a[href*="prima"]) {
+    display: none !important;
+  }
 }

@@ -31,7 +31,7 @@
       overflow-x: hidden;
       .vs__selected,
       .vs__search {
-        color: #787878;
+        color: #545454; // WCAG AAA (7:1) - era #787878
         margin-top: 0;
         padding-left: 0;
       }
@@ -77,7 +77,7 @@
   }
 
   &.vs--open {
-    color: #787878;
+    color: #545454; // WCAG AAA (7:1) - era #787878
     background-color: #fff;
     border-color: #80b9ff;
     outline: 0;
