@@ -9,7 +9,7 @@
       </router-view>
     </main>
     <footer id="footer" class="pt-5 pb-5 text-center text-muted small">
-      © {{ year }} Portábilis - Todos os direitos reservados
+      © {{ year }} UAEFAMA - União das Escolas Famílias Agrícolas do Maranhão
     </footer>
   </div>
 </template>
