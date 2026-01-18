@@ -8,9 +8,9 @@ código aberto. Cumpra a Lei 14.851/2024, com gestão eficiente e transparente p
 Para instalar o projeto execute os comandos abaixo no diretório raiz do i-Educar:
 
 ```bash
-git clone git@github.com:portabilis/pre-matricula-digital.git packages/portabilis/pre-matricula-digital
+git clone git@github.com:uaefama/pre-matricula-digital.git packages/uaefama/pre-matricula-digital
 
-cp packages/portabilis/pre-matricula-digital/.env.example packages/portabilis/pre-matricula-digital/.env
+cp packages/uaefama/pre-matricula-digital/.env.example packages/uaefama/pre-matricula-digital/.env
 ```
 
 ### Docker
@@ -27,7 +27,7 @@ services:
     ports:
       - "5173:5173"
     volumes:
-      - ./packages/portabilis/pre-matricula-digital:/var/www/pre-matricula-digital
+      - ./packages/uaefama/pre-matricula-digital:/var/www/pre-matricula-digital
     working_dir: /var/www/pre-matricula-digital
 ```
 
@@ -60,7 +60,7 @@ Configure no seu arquivo `.env` na raíz do i-Educar:
 
 ```bash
 FRONTIER_ENDPOINT=/pre-matricula-digital
-FRONTIER_VIEWS_PATH=packages/portabilis/pre-matricula-digital/dist
+FRONTIER_VIEWS_PATH=packages/uaefama/pre-matricula-digital/dist
 ```
 
 Finalize a instalação do projeto:
@@ -68,8 +68,8 @@ Finalize a instalação do projeto:
 ```bash
 composer plug-and-play:update
 
-yarn --cwd packages/portabilis/pre-matricula-digital install
-yarn --cwd packages/portabilis/pre-matricula-digital build --base=/vendor/pre-matricula-digital/
+yarn --cwd packages/uaefama/pre-matricula-digital install
+yarn --cwd packages/uaefama/pre-matricula-digital build --base=/vendor/pre-matricula-digital/
 
 php artisan migrate
 php artisan vendor:publish --tag=pmd
@@ -133,5 +133,3 @@ O backend é construído utilizando [Laravel](https://laravel.com/) e [Lighthous
 [Service Provider](https://laravel.com/docs/master/providers) e como um pacote para o i-Educar.
 
 ---
-
-Powered by [Portábilis](https://portabilis.com.br).
